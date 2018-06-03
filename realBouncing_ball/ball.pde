@@ -9,6 +9,7 @@ class ball {
   int r = 20;
 
   ball() {
+    //PVector class is an object, instantiating
     location = new PVector(width/2,height/2,0);
     velocity = new PVector(2.50,5.00,0);
   }
