@@ -1,11 +1,12 @@
 Star[] stars = new Star[400];
-Triangle[] triangles = new Triangle[10];
+Triangle[] triangles = new Triangle[50];
 
 float speed;
+float triangle_rotation;
 float triangle_speed;
 
 void setup() {
-  size(displayWidth,displayHeight);
+  fullScreen();
   surface.setResizable(true);
   for (int i = 0; i < stars.length; i++) {
     stars[i] = new Star();
@@ -17,7 +18,9 @@ void setup() {
 
 void draw() {
   speed = map(mouseX,0,width,0,20);
-  triangle_speed = map(mouseX,0,width,0,0.0001);
+  triangle_speed = map(mouseY,0,height,-10,10);
+  triangle_rotation = map(mouseX,0,width,0,0.0001);
+  
   translate(width/2,height/2);
   background(0);
   for (int i = 0; i < stars.length; i++) {

@@ -3,7 +3,6 @@ class Triangle {
   float y1,y2,y3;
   float z;
   float angle = 0;
-  float color1,color2,color3;
   Triangle() {
     x1 = 0;
     y1 = -75;
@@ -16,7 +15,7 @@ class Triangle {
   
   void show() {
     noFill();
-    stroke(random(255),random(250),210);
+    stroke(255);
     
     float sx1 = map(x1/z,0,1,0,width);
     float sx2 = map(x2/z,0,1,0,width);
@@ -31,10 +30,10 @@ class Triangle {
   void update() {
     rectMode(CENTER);
     rotate(angle);
-    z -= speed;
+    z += triangle_speed;
     if (z < 1) {
       z = width;
     }
-    angle -= triangle_speed;
+    angle -= triangle_rotation;
   }
 }
